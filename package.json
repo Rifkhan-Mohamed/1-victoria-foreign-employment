@@ -1,0 +1,24 @@
+{
+  "name": "victoria-foreign-employment-independent",
+  "version": "8.0.0",
+  "private": true,
+  "description": "Victoria Foreign Employment static website with local enquiry drafts and browser validation",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/validate.mjs && node tests/workflow.test.cjs",
+    "preview": "node scripts/preview.mjs",
+    "dev": "node scripts/build.mjs && node scripts/preview.mjs",
+    "test:browser": "playwright test",
+    "check": "node scripts/check.mjs",
+    "test:build": "node --test tests/build.test.mjs",
+    "verify": "npm run check && npm run test:build && npm run build && npm test && npm run test:browser"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.64.0"
+  }
+}

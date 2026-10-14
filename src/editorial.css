@@ -1,0 +1,80 @@
+/* Two editorial introductions. Shared theme tokens; no global component overrides. */
+.home .intro-layout{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1.9fr);grid-template-areas:"brief copy";gap:clamp(40px,5vw,72px);align-items:center}
+.home .intro-copy{grid-area:copy;min-width:0}
+.home .intro-copy h2{font-size:clamp(34px,3.35vw,48px);line-height:1.18;text-wrap:balance}
+.home .intro-copy>p{margin:24px 0;max-width:64ch}
+.home .intro-copy .text-link{max-width:100%;font-size:15px;line-height:1.5}
+.home .intro-copy .text-link>span{flex:none}
+.home .requirement-brief{grid-area:brief;min-width:0;padding:32px;background:var(--soft);border:1px solid var(--line);border-top:3px solid var(--acc)}
+.home .requirement-brief .eyebrow{font-size:10px;letter-spacing:.13em;margin:0 0 20px}
+.home .requirement-brief h3{font:400 36px/1.1 var(--serif);letter-spacing:-.02em;color:var(--ink);margin:0 0 26px}
+.home .brief-lines{margin:0}
+.home .brief-lines>div{padding:15px 0;border-top:1px solid var(--line)}
+.home .brief-lines>div:last-child{padding-bottom:0}
+.home .brief-lines dt{display:flex;align-items:baseline;gap:14px;font-size:16px;font-weight:600;line-height:1.5;color:var(--ink)}
+.home .brief-lines dt>span{width:19px;flex:none;font-size:11px;letter-spacing:.04em;font-weight:500;color:var(--acc)}
+.home .brief-lines dd{margin:5px 0 0 33px;font-size:13px;line-height:1.55;color:var(--mut)}
+.company-profile{padding-block:72px}
+.company-profile .profile-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.company-profile .section-kicker{margin:0 0 12px;color:var(--focus)}
+.company-profile .profile-heading h2{margin:0}
+.company-profile .profile-audience{font-size:12px;line-height:1.6;color:var(--mut);padding-bottom:5px}
+.company-profile .profile-overview{display:grid;grid-template-columns:1.12fr 1fr;gap:clamp(36px,5vw,64px);padding:36px 0}
+.company-profile .profile-overview>div{min-width:0}
+.company-profile .profile-summary>p{font:400 25px/1.45 var(--serif);color:var(--ink);max-width:36ch}
+.company-profile .profile-detail>p{font-size:16px;line-height:1.8;max-width:53ch}
+.company-profile .profile-sectors{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.company-profile .profile-sectors li{display:flex;flex-direction:column;gap:12px;padding-top:16px;border-top:1px solid var(--line);min-width:0;font-size:12px;line-height:1.5;color:var(--ink)}
+.company-profile .profile-sectors svg{color:var(--acc);flex:none}
+.company-profile .profile-sequence{border-top:1px solid var(--line);padding-top:28px}
+.company-profile .profile-sequence h3{font:600 11px/1.5 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--mut);margin:0 0 23px}
+.company-profile .profile-route{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.company-profile .profile-route li{position:relative;min-width:0;display:flex;gap:14px;align-items:flex-start;font-size:14px;line-height:1.6;color:var(--ink)}
+.company-profile .route-number{display:grid;place-items:center;width:33px;height:33px;flex:none;background:var(--soft);border:1px solid var(--line);border-radius:50%;font-size:10px;color:var(--focus);letter-spacing:.04em}
+.company-profile .profile-route li:not(:last-child):after{content:"→";position:absolute;right:-19px;top:3px;color:var(--acc);font-size:16px}
+@media(max-width:1000px){
+ .home .intro-layout{grid-template-columns:minmax(250px,.85fr) minmax(0,1.45fr);gap:32px}
+ .home .requirement-brief{padding:26px}
+ .company-profile{padding-block:56px}
+ .company-profile .profile-overview{gap:32px}
+ .company-profile .profile-summary>p{font-size:23px}
+ .company-profile .profile-route{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 32px}
+ .company-profile .profile-route li:after{display:none}
+ .company-profile .route-break{display:none}
+}
+@media(max-width:800px){
+ .home .intro-layout{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "brief";gap:32px}
+ .home .intro-copy h2{font-size:clamp(32px,4.8vw,40px)}
+ .home .requirement-brief{display:grid;grid-template-columns:.8fr 1.2fr;column-gap:32px;padding:28px}
+ .home .requirement-brief .eyebrow{grid-column:1/-1;margin-bottom:18px}
+ .home .requirement-brief h3{font-size:32px;margin:0}
+ .home .brief-lines>div{padding:11px 0}
+ .home .brief-lines>div:first-child{border-top:0;padding-top:0}
+ .home .brief-lines>div:last-child{padding-bottom:0}
+ .company-profile .profile-overview{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:28px}
+ .company-profile .profile-summary>p{max-width:unset}
+ .company-profile .profile-detail>p{max-width:unset}
+}
+@media(max-width:560px){
+ .home .intro-copy>p{font-size:16px;margin:20px 0}
+ .home .requirement-brief{grid-template-columns:minmax(0,1fr);padding:22px;row-gap:16px}
+ .home .requirement-brief h3{font-size:28px;line-height:1.2}
+ .home .requirement-brief h3 br{display:none}
+ .home .requirement-brief .eyebrow{margin:0}
+ .home .brief-lines>div:first-child{border-top:1px solid var(--line);padding-top:15px}
+ .home .brief-lines>div{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px;align-items:baseline;padding:13px 0}
+ .home .brief-lines dt{font-size:14px;gap:10px}
+ .home .brief-lines dd{margin:0;font-size:12px}
+ .company-profile{padding-block:40px}
+ .company-profile .profile-heading{display:block;padding-bottom:24px}
+ .company-profile .profile-audience{display:block;margin-top:14px}
+ .company-profile .profile-summary>p{font-size:22px}
+ .company-profile .profile-sectors{gap:10px;margin-top:22px}
+ .company-profile .profile-sectors li{font-size:11px;gap:10px}
+ .company-profile .profile-sectors svg{width:28px;height:28px}
+ .company-profile .profile-sequence{padding-top:24px}
+ .company-profile .profile-route{grid-template-columns:minmax(0,1fr);gap:0}
+ .company-profile .profile-route li{padding:0 0 20px;align-items:center}
+ .company-profile .profile-route li:last-child{padding-bottom:0}
+ .company-profile .profile-route li:not(:last-child):before{content:"";position:absolute;left:16px;top:33px;bottom:0;width:1px;background:var(--line)}
+}
